@@ -14,8 +14,8 @@
 * [License](#License)
 
 ## Description
-Shell is a program that takes the command inputs written from the the user’s keyboard and passes them to the machine to execute them through the kernel. It also verifies if the command inputs from the user are correct. A shell is a messanger between the user, the kernel and the machine [Ricardo Hincapie](https://medium.com/swlh/tutorial-to-code-a-simple-shell-in-c-9405b2d3533e) && [Unix shell](https://en.wikipedia.org/wiki/Unix_shell). 
-Simple_shell is a command line interpreter, or shell, in the tradition of the first Unix shell written by [Ken Thompson](https://en.wikipedia.org/wiki/Thompson_shell) in 1971. Standard functions and system calls employed in simple_shell include: **access, execve, exit, fork, free, fstat, getline, malloc, perror, signal, stat, wait, write**.
+* Shell is a program that takes the command inputs written from the the user’s keyboard and passes them to the machine to execute them through the kernel. It also verifies if the command inputs from the user are correct. A shell is a messanger between the user, the kernel and the machine [Ricardo Hincapie](https://medium.com/swlh/tutorial-to-code-a-simple-shell-in-c-9405b2d3533e) && [Unix shell](https://en.wikipedia.org/wiki/Unix_shell). 
+* Simple_shell is a command line interpreter, or shell, in the tradition of the first Unix shell written by [Ken Thompson](https://en.wikipedia.org/wiki/Thompson_shell) in 1971. Standard functions and system calls employed in simple_shell include: **access, execve, exit, fork, free, fstat, getline, malloc, perror, signal, stat, wait, write**.
 
 ## Objectives
 * To have knowledge of who designed and implemented the original Unix operating system
@@ -54,11 +54,11 @@ Simple_shell is a command line interpreter, or shell, in the tradition of the fi
 |4. |  |  |
 
 ## Installation
-* Clone this repository: **git clone "https://github.com/alexaorrico/simple_shell.git"**
-* Change directories into the repository: **cd simple_shell**
-* Compile: **gcc -Wall -Werror -Wextra -pedantic *.c -o hsh**
-* Run the shell in interactive mode: **./hsh**
-* Or run the shell in non-interactive mode: example **echo "pwd" | ./hsh**
+* Clone this repository: ```git clone "https://github.com/alexaorrico/simple_shell.git"```
+* Change directories into the repository: ```cd simple_shell```
+* Compile: ```gcc -Wall -Werror -Wextra -pedantic *.c -o hsh```
+* Run the shell in interactive mode: ```./hsh```
+* Or run the shell in non-interactive mode: example ```echo "pwd" | ./hsh```
 
 ## Usage
 The simple_shell is designed to execute commands in a similar manner to sh, however with more limited functionality. The development of this shell is ongoing. The below features will be checked as they become available (see man page for complete information on usage):
