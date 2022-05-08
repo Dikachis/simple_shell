@@ -45,7 +45,7 @@ Simple_shell is a command line interpreter, or shell, in the tradition of the fi
 * All header files were include guarded
 * AUTHORS file at the root of the repository, listing all individuals having contributed content to the repository.
 
-## File structures/description:
+## File structures/description
 | S/N   |       Files          |        Description  |
 |:-----:|:--------------------:|:-------------------|
 |1. |  |  |
@@ -87,7 +87,7 @@ The simple_shell is designed to execute commands in a similar manner to sh, howe
 
 ## Example of Use
 Run the executable in your terminal after compiling:
----
+```
 $ ./hsh
 $ # This is our rendition of the shell
 $ ls -al
@@ -110,7 +110,7 @@ drwxrwxr-x  8 vagrant vagrant  4096 Jul 19 22:34 .git
 -rw-rw-r--  1 vagrant vagrant  1480 Jul 18 21:15 simple_shell.c
 -rw-rw-r--  1 vagrant vagrant  2111 Jul 16 01:10 strfunc.c
 -rw-rw-r--  1 vagrant vagrant   719 Jul 19 21:46 tokenize.c
----
+```
 
 ## Bugs
 At this time, there are no known bugs.
