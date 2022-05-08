@@ -1,5 +1,5 @@
 # 0x16. C - Simple Shell
-## ![alt text](https://github.com/Dikachis/alx-low_level_programming/blob/master/image/shell.jpg?raw=true)
+## <p align="center">![alt text](https://github.com/Dikachis/alx-low_level_programming/blob/master/image/shell.jpg?raw=true)</p>
 
 ## Table of Content
 * [Description](#Description)
