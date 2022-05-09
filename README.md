@@ -37,7 +37,7 @@
 * Allowed editors: **vi**, **vim**, **emacs**
 * Simple_shell is designed to run in the **Ubuntu 20.04 LTS linux environment and to be compiled using using gcc**, with the options **-Wall -Werror -Wextra -pedantic -std=gnu89**
 * All files ends with a new line
-* There is a **README.md** file, at the root of the folder of the project
+* There is a **README.md** fle, at the root of the folder of the project
 * Codes are compiled using the **Betty style**
 * The only C standard library functions allowed are **malloc**, **free** and **exit**.
 * Also allowed to use **_putchar**
