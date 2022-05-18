@@ -13,7 +13,7 @@
 
 
 void _env(char **com);
-int main();
+int promptshell();
 
 
 #endif /* _SHELL_H_ */

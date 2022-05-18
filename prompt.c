@@ -1,8 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+/**
+ * promptshell - stats the shell prompt
+ *
+ * Return: returns value to continue or stop shell
+ */
 
+int promptshell();
+
+int main(void)
+{
+        promptshell();
+        return (0);
+}
+
+int promptshell(void)
 {
 
         size_t bytes_read;
