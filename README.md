@@ -21,7 +21,7 @@
 * To have knowledge of who designed and implemented the original Unix operating system
 * To know who wrote the first version of the UNIX shell
 * To know who invented the B programming language (the direct predecessor to the C programming language)
-* To know who is Ken Thompson
+* To know who Ken Thompson is
 * To know how a shell works
 * To know what a pid and a ppid are
 * To know how to manipulate the environment of the current process
