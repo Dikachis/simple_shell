@@ -14,6 +14,7 @@
 
 void _env(char **com);
 int promptshell();
-
+int promptshell(void);
+int prompt(void);
 
 #endif /* _SHELL_H_ */
