@@ -18,6 +18,7 @@
 void _env(char **com);
 int promptshell();
 int promptshell(void);
+void prompt_user(void)
 char **getToken(char **buf, char *pattern);
 void shellInstance(void);
 void execute(char *arg, char **args);
