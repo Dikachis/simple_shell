@@ -11,16 +11,14 @@
 #include <limits.h>
 #include <signal.h>
 
-#define _NORMAL 1
-#define _SKIP 2
-#define _SHELL_END 3
 
 void _env(char **com);
-int promptshell();
-int promptshell(void);
-void prompt_user(void)
-char **getToken(char **buf, char *pattern);
-void shellInstance(void);
-void execute(char *arg, char **args);
+/*shell init*/
+int main(int ac, char **av, char **env);
+void prompt(void);
+void handle(int signals);
+void _EOF(char *buffer);
+void shell_exit(char **command);
+
 
 #endif /* _SHELL_H_ */
