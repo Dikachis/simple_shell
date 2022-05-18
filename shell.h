@@ -12,8 +12,8 @@
 #include <signal.h>
 
 
-void _env(char **com)
-
+void _env(char **com);
+int main();
 
 
 #endif /* _SHELL_H_ */
