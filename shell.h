@@ -1,147 +1,91 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+
 #include <sys/types.h>
-#include <sys/wait.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <signal.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <signal.h>
 #include <errno.h>
 #include <limits.h>
 
-#define F_FLUSH -1
-#define ILLNUM 666
-#define NOTDIR 777
 
+/*global variables*/
 
-void _env(char **com);
-int _getc(int fd);
-char *_fgets(char *s, int n, int fd);
-int _getline(char **lineptr, int fd);
+char **create_env(char *envp[]);
+void _updateoldpwd(char *buf, char **myenv);
+void _updatepwd(char *buf, char **myenv);
 
-/* environmental variables */
-extern char **environ;
+/*setenv*/
+int _issetenv(char **p, char ***myenv, int *e, int loop, char *v[]);
+void _setenv(char **p, char ***myenv, int *e, int loop, char *v[]);
+void _setenvcreat(char ***myenv, int *e, char *entirenv);
 
-/**
- * struct list_s - singly linked list
- * @str: string - (malloc'ed string)
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * for Holberton project
- */
+/* unsetenv*/
+int _isunsetenv(char **p, char **myenv, int *e, int loop, char *v[]);
+void _unsetenv(char **p, char **myenv, int *e, int loop, char *v[]);
+void _errorenv(char **p);
 
-typedef struct list_s
-{
-	char *str;
-	struct list_s *next;
-} list_t;
-/**
- * struct arguments - Values to be accessed by various functions
- * @buf: String
- * @arr: Array of strings
- * @count: Command count
- * @status: Exit status
- * @head: Pointer to first node
- * @argv: Name of the executable
- * @ac: argument count
- * @exit_status: Exit status of the previous cmd
- * @index: Index
- */
-typedef struct arguments
-{
-	char *buf;
-	char **arr;
-	int count;
-	pid_t status;
-	list_t *head;
-	char *argv;
-	int ac;
-	int exit_status;
-	int index;
-} arguments_t;
+/* shell functions*/
+void _noargv(char *argv[], char *envp[]);
+void _yesargv(char *argv[], char *envp[]);
+void functions(char *line, int loop, char *argv[], char ***m, int *e, char *f);
+int rev(char **p, int L, char *li, char **v, char ***m, int *e, char *f);
+char *str_concat(char *s1, char *s2);
+int _strlen(char *s);
+void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+char *_getline(int *a, char **m, int e);
+char  *_getlineav(int *a, char **m, int e, char **av);
+char **parsing(char *line);
+char *_comments(char *line);
+int semicolon(char *line, int loop, char **argv);
+int currentstatus(int *status);
 
-/**
- * struct built_ins - Struct for built-ins
- * @bi: Name of built-ins
- * @f: Function pointer
- */
-typedef struct built_ins
-{
-	char *bi;
-	int (*f)(arguments_t *args);
-} built_ins_t;
+/*char _getline_av(char *buffer);*/
+void free_grid(char **grid, int height);
+void _frk(char **p, char *l, int a, int L, char **v, int e, char **m, char *f);
+void *_calloc(unsigned int nmemb, unsigned int size);
+char **checkbin(char **b, char **m);
+void *_realloc2(char *a, char *p, unsigned int old, unsigned int new_size);
+int  _isexit(char **p, int L, char *l, char **v, char **m, char *f);
+void _signal(int s);
+int _isenv(char **p, char **myenv);
+void _env(char **myenv);
+void _cd(char **a, int loop, char *v[], char **myenv);
+int _iscd(char **p, int loop, char *v[], char **myenv);
+char *_gethome(char **m);
+char *_changepwd(void);
+char *_changeoldpwd(void);
+char *_getpwd(char **m);
+int _atoi(char *s);
+char *_strtoky(char *s, char *d);
+char *_strtoky2(char *s, char *d);
 
-/* main.c */
-void initialize_struct(arguments_t *arguments);
-int _exit_status(void);
+#define SIZE 1024
 
-/* strings_functions.c */
-char *_strtok(char *buffer, const char *delim);
-int _strlen(char *str);
-char **tokarr(char *buffer);
-int _putchar(int c);
-int _puts(char *str);
+/* help files*/
+int _ishelp(char **p, int loop, char *v[], char **m);
+void _help_builtin(char **p, int loop, char *v[], char **m);
+void _help(char **p, int loop, char *v[], char **m);
+ssize_t read_help(char **m);
+ssize_t read_cdhelp(char **m);
+ssize_t read_exithelp(char **m);
+ssize_t read_helphelp(char **m);
 
-/* string_functions2.c */
-char *_memset(char *s, char b, unsigned int n);
-char *_strcat(char *dest, char *src);
-int _strcmp(const char *s1, const char *s2);
-int _strncmp(const char *s1, const char *s2, size_t n);
-int printerr(char *str);
-
-/* string_functions3.c */
-char *_strdup(const char *str);
-int _isalpha(int c);
-char *comments(char *s);
-char *_strchr(char *s, char c);
-
-/* built-ins.c */
-int print_env(arguments_t *args);
-int builtins(arguments_t *args);
-int custom_cd(arguments_t *args);
-int call_exit(arguments_t *args);
-int print_env(arguments_t *args);
-
-/* built-ins2.c */
-size_t list_len(const list_t *h);
-int delete_node_at_index(list_t **head, size_t index);
-void free_list(list_t *head);
-list_t *add_node_end(list_t **head, const char *str);
-list_t *arrtol(void);
-
-/* built-ins3.c */
-char **ltoa(list_t *head);
-int _unsetenv(arguments_t *args);
-int _setenv(arguments_t *args);
-int _help(arguments_t *args);
-void _help2(arguments_t *args);
-
-/* built-insn4.c */
-list_t *insert_node_at_index(list_t **head, unsigned int idx, char *str);
-
-/* environment.c */
-char *_getenv(char *name, arguments_t *args);
-char *_append(char *s, char *token, char *buff);
-char *get_path(arguments_t *args);
-void evaluate_var(arguments_t *arguments);
-
-/* shell.c */
-void _fork(arguments_t *arguments);
-void _shell(arguments_t *arguments);
-char *convert(unsigned int num, int base);
-void signal_handler(int signum);
-void error(arguments_t *args, int errortype);
-
-
-#endif /*_SIMPLE_SHELL_H_*/
-
-
-
-
+/* errors */
+void _put_err(char **p, int loop, int sig, char *v[]);
+void _builtinerr(char **p);
+void _builtinerr2(char **p);
+void _errorcd(char **p);
+void _errorexit(char **p);
+void _errorhelp(char **p);
+void _errorgarbage(char **p);
+void print_number(int n);
 
 
 #endif /* _SHELL_H_ */
