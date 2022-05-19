@@ -7,7 +7,7 @@ By David Joel, and Nixon Okoth
 A simple command-line interpreter developed as an end of trimester project at the ALX-Holberton School.
 
 <h2>Description: :thought_balloon:</h2>
- 
+
 Simple shell reads simple commands from standard input or from a file and executes them.
 
 <h3>Compilation :fireworks::</h3>
