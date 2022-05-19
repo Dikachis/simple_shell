@@ -2,7 +2,7 @@
 
 # Shell Project `(simple Shell)`
 
-By David Joel, and Nixon Okoth
+By D avid Joel, and Nixon Okoth
 
 A simple command-line interpreter developed as an end of trimester project at the ALX-Holberton School.
 
