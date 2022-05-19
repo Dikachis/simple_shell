@@ -230,4 +230,25 @@ void aux_help_cd(void);
 /* get_help.c */
 int get_help(data_shell *datash);
 
+/*alias*/
+/**
+ * struct alias_s - A new struct defining aliases.
+ * @name: The name of the alias.
+ * @value: The value of the alias.
+ * @next: A pointer to another struct alias_s.
+ */
+typedef struct alias_s
+{
+	char *name;
+	char *value;
+	struct alias_s *next;
+} alias_t;
+
+/* Global aliases linked list */
+alias_t *aliases;
+
+int shellby_alias(char **args, char __attribute__((__unused__)) **front);
+void set_alias(char *var_name, char *value);
+void print_alias(alias_t *alias);
+
 #endif
