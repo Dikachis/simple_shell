@@ -3,7 +3,7 @@
 # Shell Project `(simple Shell)`
 
 By David Joel, and Nixon Okoth
-
+ 
 A simple command-line interpreter developed as an end of trimester project at the ALX-Holberton School.
  
 <h2>Description: :thought_balloon:</h2>
