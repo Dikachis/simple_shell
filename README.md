@@ -108,7 +108,7 @@ At this time, there are no known bugs.
 [ONYEDIKACHI OKPARA](https://github.com/Dikachis) || [Ezugo Ojukwu](https://github.com/zugo-m)
 
 ## License
-Simple_shell is open source and therefore free to download and use without permission.
+Simple_shell is open source and free to download and use without permission.
 
 
 [Alx](https://alx-intranet.hbtn.io/projects/235) | [Firefox Pocket](https://getpocket.com/my-list?src=navbar)
