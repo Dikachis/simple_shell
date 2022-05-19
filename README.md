@@ -21,7 +21,7 @@ Simple shell can be invoked in two modes: interactive and non-interactive.<br/>
 
 **Non-interactive mode**
 
- invoked with standard input simple shell will read and execute commands in order.
+If invoked with standard input simple shell will read and execute commands in order.
 
 Example:
 
